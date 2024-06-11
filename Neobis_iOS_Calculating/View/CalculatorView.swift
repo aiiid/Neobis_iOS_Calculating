@@ -8,12 +8,17 @@
 import UIKit
 
 class CalculatorView: UIView {
-    var viewModel: CalculatorViewModel!
+    var viewModel: CalculatorViewModel! {
+           didSet {
+               setupView()
+           }
+       }
     
     private let displayLabel: UILabel = {
         let label = UILabel()
         label.text = "0"
         label.textAlignment = .right
+        label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 50)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -22,7 +27,7 @@ class CalculatorView: UIView {
     private let mainStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.spacing = 10
+        stackView.spacing = 20
         stackView.distribution = .fillProportionally
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
@@ -30,39 +35,45 @@ class CalculatorView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupView(){
-        backgroundColor = .systemPink
+    private func setupView() {
         addSubview(mainStackView)
-        
         mainStackView.addArrangedSubview(displayLabel)
         
-        let buttonTitles = [
-            ["C", "8", "%", "/"],
-            ["4", "5", "6", "*"],
-            ["1", "2", "3", "-"],
-            ["0", "C", "=", "+"],
-            ["0", "C", ".", "="]
-        ]
+        let buttons = viewModel.buttons
         
-        for row in buttonTitles{
+        for (rowIndex, row) in buttons.enumerated() {
             let rowStackView = UIStackView()
             rowStackView.axis = .horizontal
             rowStackView.spacing = 10
             rowStackView.distribution = .fillEqually
             
-            for title in row {
-                let button = UIButton(type: .system)
-                button.setTitle(title, for: .normal)
-                button.titleLabel?.font = UIFont.systemFont(ofSize: 24)
-                button.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
-                rowStackView.addArrangedSubview(button)
+            for item in row {
+                let buttonView = CalculatorButtonView(frame: .zero)
+                buttonView.configure(with: item)
+                buttonView.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
+                
+                rowStackView.addArrangedSubview(buttonView)
+                buttonView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+                
+                if rowIndex == buttons.count - 1 && item.title == "0" {
+                    buttonView.widthAnchor.constraint(
+                        equalTo: rowStackView.widthAnchor,
+                        multiplier: 2/4,
+                        constant: -10
+                    ).isActive = true
+                } else if rowIndex == buttons.count - 1 {
+                    buttonView.widthAnchor.constraint(
+                        equalTo: rowStackView.widthAnchor,
+                        multiplier: 1/4,
+                        constant: -5
+                    ).isActive = true
+                }
             }
             mainStackView.addArrangedSubview(rowStackView)
         }
@@ -70,8 +81,7 @@ class CalculatorView: UIView {
         NSLayoutConstraint.activate([
             mainStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             mainStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            mainStackView.topAnchor.constraint(equalTo: topAnchor, constant: 40),
-            mainStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
+            mainStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -40)
         ])
     }
     

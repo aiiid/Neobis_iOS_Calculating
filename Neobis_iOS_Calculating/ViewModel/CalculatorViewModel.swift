@@ -12,6 +12,14 @@ class CalculatorViewModel {
     
     var displayText = "0"
     
+    let buttons: [[CalculatorButton]] = [
+        [.allClear, .plusMinus, .percentage, .divide],
+        [ .number(7), .number(8), .number(9), .multiply],
+        [ .number(4), .number(5), .number(6), .subtract],
+        [.number(1), .number(2), .number(3), .add],
+        [.number(0), .decimal, .equals]
+    ]
+    
     func handleInput(_ input: String){
         if let number = Int(input) {
             inputNumber(number)
@@ -21,9 +29,9 @@ class CalculatorViewModel {
                 setOperation(.addition)
             case "-":
                 setOperation(.substraction)
-            case "*":
+            case "×":
                 setOperation(.multiplication)
-            case "/":
+            case "÷":
                 setOperation(.division)
             case "=":
                 calculate()

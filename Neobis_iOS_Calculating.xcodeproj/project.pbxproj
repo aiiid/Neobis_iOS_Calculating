@@ -15,6 +15,8 @@
 		E2D2FF512C17832A00B8BDCB /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2FF502C17832A00B8BDCB /* CalculatorViewModel.swift */; };
 		E2D2FF532C17834C00B8BDCB /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2FF522C17834C00B8BDCB /* CalculatorView.swift */; };
 		E2D2FF552C17836A00B8BDCB /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2FF542C17836A00B8BDCB /* CalculatorViewController.swift */; };
+		E2D2FF572C18620C00B8BDCB /* CalculatorButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2FF562C18620C00B8BDCB /* CalculatorButtonView.swift */; };
+		E2D2FF592C1863D300B8BDCB /* CalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2FF582C1863D300B8BDCB /* CalculatorButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		E2D2FF502C17832A00B8BDCB /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
 		E2D2FF522C17834C00B8BDCB /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		E2D2FF542C17836A00B8BDCB /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		E2D2FF562C18620C00B8BDCB /* CalculatorButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtonView.swift; sourceTree = "<group>"; };
+		E2D2FF582C1863D300B8BDCB /* CalculatorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,15 +64,12 @@
 		E2D2FF352C17828000B8BDCB /* Neobis_iOS_Calculating */ = {
 			isa = PBXGroup;
 			children = (
-				E2D2FF4D2C1782C100B8BDCB /* ViewModel */,
-				E2D2FF4C2C1782BD00B8BDCB /* View */,
 				E2D2FF4B2C1782B400B8BDCB /* Model */,
-				E2D2FF362C17828000B8BDCB /* AppDelegate.swift */,
-				E2D2FF382C17828000B8BDCB /* SceneDelegate.swift */,
-				E2D2FF3F2C17828300B8BDCB /* Assets.xcassets */,
-				E2D2FF412C17828300B8BDCB /* LaunchScreen.storyboard */,
-				E2D2FF442C17828300B8BDCB /* Info.plist */,
+				E2D2FF4C2C1782BD00B8BDCB /* View */,
+				E2D2FF4D2C1782C100B8BDCB /* ViewModel */,
 				E2D2FF542C17836A00B8BDCB /* CalculatorViewController.swift */,
+				E2D2FF442C17828300B8BDCB /* Info.plist */,
+				E2D2FF5A2C18887F00B8BDCB /* Support */,
 			);
 			path = Neobis_iOS_Calculating;
 			sourceTree = "<group>";
@@ -85,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				E2D2FF522C17834C00B8BDCB /* CalculatorView.swift */,
+				E2D2FF562C18620C00B8BDCB /* CalculatorButtonView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -93,8 +95,20 @@
 			isa = PBXGroup;
 			children = (
 				E2D2FF502C17832A00B8BDCB /* CalculatorViewModel.swift */,
+				E2D2FF582C1863D300B8BDCB /* CalculatorButton.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E2D2FF5A2C18887F00B8BDCB /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				E2D2FF362C17828000B8BDCB /* AppDelegate.swift */,
+				E2D2FF382C17828000B8BDCB /* SceneDelegate.swift */,
+				E2D2FF3F2C17828300B8BDCB /* Assets.xcassets */,
+				E2D2FF412C17828300B8BDCB /* LaunchScreen.storyboard */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,7 +182,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2D2FF372C17828000B8BDCB /* AppDelegate.swift in Sources */,
+				E2D2FF572C18620C00B8BDCB /* CalculatorButtonView.swift in Sources */,
 				E2D2FF392C17828000B8BDCB /* SceneDelegate.swift in Sources */,
+				E2D2FF592C1863D300B8BDCB /* CalculatorButton.swift in Sources */,
 				E2D2FF4F2C17830D00B8BDCB /* CalculatorModel.swift in Sources */,
 				E2D2FF532C17834C00B8BDCB /* CalculatorView.swift in Sources */,
 				E2D2FF552C17836A00B8BDCB /* CalculatorViewController.swift in Sources */,

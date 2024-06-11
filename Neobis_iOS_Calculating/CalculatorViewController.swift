@@ -17,10 +17,7 @@ class CalculatorViewController: UIViewController {
         view = calculatorView
     }
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemCyan
-        print("running")
     }
 }
