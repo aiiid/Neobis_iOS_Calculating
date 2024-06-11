@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E2D2FF372C17828000B8BDCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2FF362C17828000B8BDCB /* AppDelegate.swift */; };
 		E2D2FF392C17828000B8BDCB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2FF382C17828000B8BDCB /* SceneDelegate.swift */; };
-		E2D2FF3B2C17828000B8BDCB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2FF3A2C17828000B8BDCB /* ViewController.swift */; };
 		E2D2FF402C17828300B8BDCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2D2FF3F2C17828300B8BDCB /* Assets.xcassets */; };
 		E2D2FF432C17828300B8BDCB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2D2FF412C17828300B8BDCB /* LaunchScreen.storyboard */; };
 		E2D2FF4F2C17830D00B8BDCB /* CalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2FF4E2C17830D00B8BDCB /* CalculatorModel.swift */; };
@@ -22,7 +21,6 @@
 		E2D2FF332C17828000B8BDCB /* Neobis_iOS_Calculating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neobis_iOS_Calculating.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2D2FF362C17828000B8BDCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2D2FF382C17828000B8BDCB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E2D2FF3A2C17828000B8BDCB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E2D2FF3F2C17828300B8BDCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2D2FF422C17828300B8BDCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2D2FF442C17828300B8BDCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,7 +65,6 @@
 				E2D2FF4B2C1782B400B8BDCB /* Model */,
 				E2D2FF362C17828000B8BDCB /* AppDelegate.swift */,
 				E2D2FF382C17828000B8BDCB /* SceneDelegate.swift */,
-				E2D2FF3A2C17828000B8BDCB /* ViewController.swift */,
 				E2D2FF3F2C17828300B8BDCB /* Assets.xcassets */,
 				E2D2FF412C17828300B8BDCB /* LaunchScreen.storyboard */,
 				E2D2FF442C17828300B8BDCB /* Info.plist */,
@@ -170,7 +167,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2D2FF3B2C17828000B8BDCB /* ViewController.swift in Sources */,
 				E2D2FF372C17828000B8BDCB /* AppDelegate.swift in Sources */,
 				E2D2FF392C17828000B8BDCB /* SceneDelegate.swift in Sources */,
 				E2D2FF4F2C17830D00B8BDCB /* CalculatorModel.swift in Sources */,

@@ -10,27 +10,50 @@ import Foundation
 class CalculatorViewModel {
     private let model = CalculatorModel()
     
-    var displayText: String = "0"
-
+    var displayText = "0"
+    
+    func handleInput(_ input: String){
+        if let number = Int(input) {
+            inputNumber(number)
+        } else {
+            switch input {
+            case "+":
+                setOperation(.addition)
+            case "-":
+                setOperation(.substraction)
+            case "*":
+                setOperation(.multiplication)
+            case "/":
+                setOperation(.division)
+            case "=":
+                calculate()
+            case "C":
+                model.clear()
+                displayText = "0"
+            default: break
+            }
+        }
+    }
+    
     func inputNumber(_ number: Int) {
         let currentNumber = Double(number)
         model.inputNumber(currentNumber)
         displayText = "\(Int(currentNumber))"
     }
-
-    func setOperation(_ operation: CalculatorModel.Operation) {
+    
+    func setOperation(_ operation: CalculatorModel.Operation){
         model.setOperation(operation)
-        displayText = "0"
     }
-
-    func calculate() {
+    
+    func calculate(){
         if let result = model.calculate() {
-            displayText = "\(result)"
+            displayText = "\(Int(result))"
         }
     }
-
-    func clear() {
+    
+    func clear(){
         model.clear()
         displayText = "0"
     }
+    
 }
