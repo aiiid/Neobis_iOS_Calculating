@@ -11,6 +11,7 @@ class CalculatorView: UIView {
     var viewModel: CalculatorViewModel! {
            didSet {
                setupView()
+               setupGestureRecognizer()
            }
        }
     
@@ -18,7 +19,7 @@ class CalculatorView: UIView {
         let label = UILabel()
         label.text = "0"
         label.textAlignment = .right
-        label.textColor = .white
+        label.textColor = .label
         label.font = UIFont.systemFont(ofSize: 50)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -85,8 +86,21 @@ class CalculatorView: UIView {
         ])
     }
     
+    private func setupGestureRecognizer() {
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(leftSwiped(_:)))
+        leftSwipe.direction = .left
+        addGestureRecognizer(leftSwipe)
+    }
+    
+    @objc private func leftSwiped(_ gesture: UISwipeGestureRecognizer) {
+        print("leftSwiped")
+        viewModel.handleSwipeLeft()
+        updateDisplay()
+    }
+    
     @objc private func buttonTapped(_ sender: UIButton) {
         guard let title = sender.currentTitle else { return }
+        print(title)
         viewModel.handleInput(title)
         updateDisplay()
     }

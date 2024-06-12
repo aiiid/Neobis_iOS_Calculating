@@ -10,7 +10,9 @@ import Foundation
 class CalculatorViewModel {
     private let model = CalculatorModel()
     
-    var displayText = "0"
+    var displayText: String {
+        return model.displayNumber()
+    }
     
     let buttons: [[CalculatorButton]] = [
         [.allClear, .plusMinus, .percentage, .divide],
@@ -21,47 +23,35 @@ class CalculatorViewModel {
     ]
     
     func handleInput(_ input: String){
-        if let number = Int(input) {
-            inputNumber(number)
+        if let number = Double(input) {
+            //            if let number = Int(n)
+            model.inputNumber(Int(number))
         } else {
             switch input {
             case "+":
-                setOperation(.addition)
+                model.setOperation(.addition)
             case "-":
-                setOperation(.substraction)
+                model.setOperation(.substraction)
             case "×":
-                setOperation(.multiplication)
+                model.setOperation(.multiplication)
             case "÷":
-                setOperation(.division)
+                model.setOperation(.division)
             case "=":
-                calculate()
-            case "C":
+                _ = model.calculate()
+            case ".":
+                model.addDecimal()
+            case "+/-":
+                model.toggleSign()
+            case "%":
+                model.percentage()
+            case "AC":
                 model.clear()
-                displayText = "0"
             default: break
             }
         }
     }
     
-    func inputNumber(_ number: Int) {
-        let currentNumber = Double(number)
-        model.inputNumber(currentNumber)
-        displayText = "\(Int(currentNumber))"
+    func handleSwipeLeft(){
+        model.popLastDigit()
     }
-    
-    func setOperation(_ operation: CalculatorModel.Operation){
-        model.setOperation(operation)
-    }
-    
-    func calculate(){
-        if let result = model.calculate() {
-            displayText = "\(Int(result))"
-        }
-    }
-    
-    func clear(){
-        model.clear()
-        displayText = "0"
-    }
-    
 }

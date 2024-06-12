@@ -32,7 +32,7 @@ extension CalculatorButton {
         case .divide:
             return "÷"
         case .multiply:
-            return "x"
+            return "×"
         case .subtract:
             return "-"
         case .add:
